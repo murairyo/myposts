@@ -1,2 +1,20 @@
-<h1>Myposts#index</h1>
-<p>Find me in app/views/myposts/index.html.erb</p>
+<div class="contentBlock">
+  <h1>投稿一覧</h1>
+
+<p><%= notice %></p>
+
+<ul>
+
+<% @myposts.each do |post| %>
+
+    <li class="contentList"><%= post.content %></li><!--
+    --><li><%= link_to "編集", edit_mypost_path(post.id), data: { confirm: '君は本当に編集するのか？' } %></li><!--
+    --><li><%= link_to '削除', mypost_path(post.id), method: :delete, data: { confirm: '貴方は本当に削除するの？' }%></li>
+
+<% end %>
+</ul>
+
+<br>
+
+<p class="submitBtn"><%= link_to '投稿する', new_mypost_path %></p>
+</div>

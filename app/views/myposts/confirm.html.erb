@@ -1,0 +1,15 @@
+<div class="confirmBlock">
+  <h2>以下の内容で、投稿する。</h2>
+
+<%= form_with(model: @mypost, url: myposts_path, local: true) do |form| %>
+  <%= form.hidden_field :content %>
+
+  <p class="confirmContent"><%= @mypost.content %></p>
+  <%= form.submit  "投稿する",:class=>"submitBtn" %>
+<% end %>
+
+<%= form_with(model: @mypost, url: new_mypost_path, local: true, method: 'get') do |form| %>
+  <%= form.hidden_field :content %>
+  <%= form.submit "もどる", name: 'back' %>
+<% end %>
+</div>
