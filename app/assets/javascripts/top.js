@@ -8,7 +8,7 @@ $(function(){
     var fadein = function(){
         $('.mainTitle').css('display','none')
         $('.mainTitle').fadeIn(2000);
-        var id =setTimeout(fadein, 1000);
+        var id =setTimeout(fadein, 2000);
         clearTimeout(id);
     } 
         fadein();
