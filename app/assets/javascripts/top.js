@@ -15,7 +15,7 @@ $(function(){
 })
 
 $(document).ready(function(){
-    // 一回走ったら走らない
+    // 一回走ったら走ら
     console.log('testです')
 });
 $(window).on('load',function(){
