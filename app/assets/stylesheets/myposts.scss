@@ -133,10 +133,10 @@ input[type="button"]::focus {
 
 .topBackground{
     background-image: url(/cloud.jpg);
+    background-attachment:fixed;
     background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-color: #464646;
+    background-size: auto;
+    background-color: aliceblue;
     height: auto;
     min-height: 100vh;
     width: 100%;
@@ -148,7 +148,7 @@ header {
 }
 header li {
     display: inline-block;
-    margin: 23px 35px;
+    margin: 23px 40px;
     font-weight: bold;
     font-size: 20px;
 }
@@ -180,7 +180,6 @@ footer {
     position: relative;
     height:70px;
     border-top: 1px solid whitesmoke;
-    margin-top: 30px;
 }
 footer span {
     font-size: 14px;
@@ -199,6 +198,7 @@ footer span {
     background-size: cover;
     background-color: #464646;
     text-align: center;
+    padding-bottom: 30px;
 }
 .contentBlock h1 {
     text-align: center;
