@@ -3,7 +3,7 @@ $(function(){
         // 全てのページで走る
      console.log('test3だい') 
       var scroll = $(this).scrollTop();
-      $(".topBackground").css("background-position", 0 + "px " + -7*scroll + "px");
+      $(".topBackground").css("background-position", 0 + "px " + -8*scroll + "px");
     })
     var fadein = function(){
         $('.mainTitle').css('display','none')

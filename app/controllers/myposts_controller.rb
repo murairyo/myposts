@@ -10,7 +10,7 @@ class MypostsController < ApplicationController
   # 新規投稿画面
   def new 
     if params[:back]
-     @mypost = Mypost.new(blog_params)
+     @mypost = Mypost.new(mypost_params)
     else
       @mypost = Mypost.new
     end
