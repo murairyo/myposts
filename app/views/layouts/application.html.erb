@@ -4,7 +4,7 @@
   <head>
     <title>Mypost</title>
     <%= csrf_meta_tags %>
-    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -12,18 +12,37 @@
   <body>
      
       <header>
-        <ul>
+        <ul class="pcList">
           <li class="homeBtn"><a href="/">HOME</a></li>
           <li><a href="/myposts/new">新規登録</a></li>
           <li><a href="/myposts">投稿一覧</a></li>
         </ul>
+        <div class="spBtn">
+          <div class="inner">
+              <span class="top"></span>
+              <span class="middle"></span>
+              <span class="bottom"></span>
+          </div>
+        </div>
+       
+       
       </header>
       <%= yield %>
      
       <footer>
         <span> © 2018 mypost All rights reserved.</span>
       </footer>
-     
+      <div class="modalWrapper">
+      <div class="modal"></div>
+      
+        <p class="menuTitle">MENU</p>
+         <ul class="spList">
+              <li class="homeBtn"><a href="/">HOME</a></li>
+              <li><a href="/myposts/new">新規登録</a></li>
+              <li><a href="/myposts">投稿一覧</a></li>
+          </ul>
+</div>
+       
   </body>
  
 </html>

@@ -1,6 +1,6 @@
 class MypostsController < ApplicationController
   
-  before_action :set_mypost, only: [:edit, :update,:destroy]
+  before_action :set_mypost, only: [:edit, :update,:destroy,:show]
   
   # 初期一覧
   def index
@@ -32,6 +32,10 @@ class MypostsController < ApplicationController
   
   # 編集する内容を入力
   def edit
+  end
+  
+  # 詳細画面
+  def show
   end
   
   # 編集された内容で、データを更新

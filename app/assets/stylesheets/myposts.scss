@@ -145,15 +145,16 @@ input[type="button"]::focus {
 header {
     height: 75px;
     border-bottom: 1px solid whitesmoke;
+        padding: 10px;
 }
-header li {
+header .pcList li {
     display: inline-block;
     margin: 23px 40px;
     font-weight: bold;
     font-size: 20px;
 }
 
-header li a {
+header .pcList li a {
      text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
      color: dodgerblue;
      display:block;
@@ -163,6 +164,9 @@ header li a {
 header li a:hover {
     opacity:0.4;
     border-bottom:2px solid dodgerblue;
+}
+.spList  {
+  display:none;
 }
 
 .mainTitle {
@@ -206,8 +210,8 @@ footer span {
     font-size: 30px;
 }
 .contentBlock input[type="text"] {
-    width: 500px;
-    height: 100px;
+    width: 50%;
+    height: 200px;
     font-size:100%;
 }
 .contentBlock input[type="submit"]{
@@ -255,6 +259,12 @@ footer span {
     border: 2px solid lightgray;
     
 }
+.contentBlock li .showBtn {
+  background:none;
+}
+.contentBlock .contentList .showBtn:hover {
+  background:linear-gradient(#FFF, cornflowerblue);
+}
 .contentBlock li a {
     color:dodgerblue ;
       display:block;
@@ -294,4 +304,161 @@ footer span {
     padding: 0;
     border-radius: 20px;
     background:linear-gradient(#FFF, whitesmoke);
+}
+.content {
+  font-size: 20px;
+    border-bottom: 3px solid dodgerblue;
+    width: 80%;
+    margin: 30px auto;
+    padding-bottom: 10px;
+}
+.menuTitle {
+  display:none;
+}
+////////////media screen///////////
+@media (max-width: 450px) {
+ 
+
+  .spList li {
+    border-bottom: 1px solid whitesmoke;
+    height: 100px;
+    text-align: center;
+    position: relative;
+    line-height: 100px;
+  }
+  .spList li:first-child{
+     border-top: 1px solid whitesmoke;
+  }
+  .menuTitle{
+    position: absolute;
+    top:0;
+    left:50%;
+    transform:translateX(-50%);
+    color:#fff;
+    z-index: 3;
+        padding-top: 30px;
+  }
+  .spList li a {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    display: block;
+    right: 0;
+    vertical-align: middle;
+    left: 0;
+  }
+  .pcList {
+    display:none;
+  }
+  .inner {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    cursor: pointer;
+        z-index: 10;
+  }
+  .inner span {
+    width: 45px;
+    height: 2px;
+    display: block;
+    background: dodgerblue;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transition: width 0.2s, right 0.2s, left 0.2s;
+  }
+  .top {
+    transform: translateY(-17px);
+    left: 0px;
+    right: 0px;
+  }
+  .inner .middle {
+    transform: translateY(0px);
+    position: relative;
+    background: none;
+  }
+  .middle:before, .middle:after {
+      content: "";
+      transition: all 0.2s;
+      display: block;
+      position: absolute;
+      width: 45px;
+      height: 2px;
+      left: 0px;
+      background: dodgerblue;
+      transform: rotate(0deg);
+  }
+  .bottom {
+    transform: translateY(17px);
+    left: 0px;
+    right: 0px;
+  }
+  
+   .is-open .top {
+      left: 100%;
+      width: 0px;
+    }
+      .is-open .middle:before, {
+        transform: rotate(135deg);
+      }
+      .is-open .middle:after {
+        transform: rotate(45deg);
+      }
+    
+     .is-open .bottom {
+      right: 100%;
+      width: 0px;
+    }
+    
+    .modal {
+    background: #000;
+    opacity: 0.9;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    }
+     .spList{
+   position: absolute;
+    z-index: 3;
+    color: white;
+    width: 70%;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+  }
+  .modalWrapper {
+    display: none;
+  }
+  .mainTitle {
+    font-size: 55px;
+    width: 80%;
+    top: 45%;
+    text-align: center;
+  }
+  footer span {
+    width:100%;
+    text-align: center;
+  }
+  .contentBlock .contentList{
+    width: 90%;
+    margin-top:10px;
+    padding: 10px 30px;
+    border-radius: 0;
+  }
+  .menuTitle {
+    display:block;
+  }
+  .contentBlock h1 {
+    text-align: center;
+    padding-top: 30px;
+    font-size: 25px;
+  }
+  .contentBlock input[type="text"] {
+    width: 90%;
+    height: 100px;
+    font-size:100%;
+}
 }

@@ -11,11 +11,28 @@ $(function(){
         var id =setTimeout(fadein, 2000);
         clearTimeout(id);
     } 
-        fadein();
+    fadein();
+    
+    $('.inner').on('click',function(){
+        console.log('クリック')
+        if($('.inner').hasClass('is-open')){
+             $('.modalWrapper').css('display','none')
+            $(this).removeClass('is-open');
+            
+            
+        }else{
+           $(this).addClass('is-open')  
+           $('.modalWrapper').css('display','block')
+        }
+       
+        
+    });
 })
 
 $(document).ready(function(){
-    // 一回走ったら走ら無い
+     $('.inner').on('click',function(){
+         console.log('クリックテスト')
+     })
     console.log('testですよー')
 });
 $(window).on('load',function(){
