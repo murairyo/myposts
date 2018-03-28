@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
-  # root to: 'myposts#index'
+  get 'sessions/new'
+
   get '/', to:'myposts#top'
-  # get '/myposts', to:'myposts#index'
   resources :myposts do
     collection do
       post :confirm
    end
   end
+  resources :sessions, only: [:new, :create, :destroy]
+  resources :users
+  
+  get '/sessions',to:'sessions#new'
 end

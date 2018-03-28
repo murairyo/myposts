@@ -315,6 +315,8 @@ footer span {
 .menuTitle {
   display:none;
 }
+
+
 ////////////media screen///////////
 @media (max-width: 450px) {
  
@@ -336,7 +338,6 @@ footer span {
     transform:translateX(-50%);
     color:#fff;
     z-index: 3;
-        padding-top: 30px;
   }
   .spList li a {
     color: white;
@@ -460,5 +461,6 @@ footer span {
     width: 90%;
     height: 100px;
     font-size:100%;
-}
+  }
+ 
 }

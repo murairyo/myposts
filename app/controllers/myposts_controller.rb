@@ -1,6 +1,7 @@
 class MypostsController < ApplicationController
   
   before_action :set_mypost, only: [:edit, :update,:destroy,:show]
+  before_action :login_check, only: [:new, :edit, :show]
   
   # 初期一覧
   def index
@@ -66,6 +67,12 @@ class MypostsController < ApplicationController
   
   def set_mypost
     @mypost = Mypost.find(params[:id])
+  end
+  
+  def login_check
+    unless current_user
+      redirect_to new_session_path
+    end
   end
      
 end
