@@ -1,7 +1,7 @@
 class MypostsController < ApplicationController
   
-  before_action :set_mypost, only: [:edit, :update,:destroy,:show]
-  before_action :login_check, only: [:new, :edit, :show]
+  before_action :set_mypost, only: [:edit,:update,:destroy,:show]
+  before_action :login_check, only: [:new,:edit, :show]
   
   # 初期一覧
   def index

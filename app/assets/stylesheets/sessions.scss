@@ -21,4 +21,9 @@
   }
   .message {
       color:red;
+      position: absolute;
+      transform: translateX(-50%);
+      font-weight: bold;
+      left: 50%;
+      top: 10px;
   }
