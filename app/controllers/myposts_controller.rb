@@ -6,6 +6,9 @@ class MypostsController < ApplicationController
   # 初期一覧
   def index
     @myposts = Mypost.all
+    # binding.pry
+    # @myposts = Mypost.new(mypost_params)
+    # @mypost.user_id = current_user.id
   end
   
   # 新規投稿画面
@@ -24,6 +27,7 @@ class MypostsController < ApplicationController
   # 投稿処理（データー保存）
   def create
     @mypost = Mypost.new(mypost_params)
+    @mypost.user_id = current_user.id
     if @mypost.save
       redirect_to myposts_path, notice: "ブログを作成しました！"
     else
@@ -37,6 +41,7 @@ class MypostsController < ApplicationController
   
   # 詳細画面
   def show
+    @favorite = current_user.favorites.find_by(mypost_id: @mypost.id)
   end
   
   # 編集された内容で、データを更新
@@ -57,7 +62,6 @@ class MypostsController < ApplicationController
   # 確認画面
   def confirm
     @mypost = Mypost.new(mypost_params)
-    render :new if @mypost.invalid?
   end
   
   private

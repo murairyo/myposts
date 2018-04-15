@@ -7,10 +7,14 @@
 
 <% @myposts.each do |post| %>
 
-    <li class="contentList"><%= link_to post.content, mypost_path(post.id), class: "showBtn" %></li><!--
-    --><li><%= link_to "編集", edit_mypost_path(post.id), data: { confirm: '君は本当に編集するのか？' } %></li><!--
-    --><li><%= link_to '削除', mypost_path(post.id), method: :delete, data: { confirm: '貴方は本当に削除するの？' }%></li>
+    <li class="contentList"><%= link_to "#{post.content}", mypost_path(post.id), class: "showBtn" %></li>
+    
 
+    <% if logged_in? && post.user.id == current_user.id%>
+    <li><%= link_to "編集", edit_mypost_path(post.id), data: { confirm: '君は本当に編集するのか？' } %></li>
+    <li><%= link_to '削除', mypost_path(post.id), method: :delete, data: { confirm: '貴方は本当に削除するの？' }%></li>
+    <% end %>
+    
 <% end %>
 </ul>
 

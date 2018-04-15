@@ -1,3 +1,8 @@
 <h1 class="loginTitle"><%= @user.name %>のページ</h1>
 
 <p>メールアドレス: <%= @user.email %></p>
+<ul>
+<% @favorites_mypost.each do |mypost| %>
+<li>お気に入り：<%= link_to "#{mypost.content}", mypost_path(mypost.id) %></li>
+<% end %>
+</ul>
